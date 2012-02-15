@@ -4,7 +4,7 @@ class MemesController < ApplicationController
   end
   
   def index
-    @memes = current_student.memes
+    @memes = current_user.memes
   end
   
   def show
