@@ -4,7 +4,7 @@ class MemesController < ApplicationController
   end
   
   def index
-    @memes = current_student.memes
+    @memes = current_user.memes
   end
   
   def show
@@ -36,7 +36,7 @@ class MemesController < ApplicationController
   
   def vote
     if meme = Meme.find(params[:id])
-      vote = MemeVote.find_or_create_by_user_id_and_meme_id(current_user, meme.id)
+      vote = MemeVote.find_or_create_by_user_id_and_meme_id(current_user.id, meme.id)
     end
     redirect_to :back
   end

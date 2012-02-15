@@ -1,0 +1,6 @@
+%ul.unstyled
+  -for meme in @memes 
+    %li
+      = image_tag meme.image
+      = link_to meme.tagline, meme_path(meme)
+    

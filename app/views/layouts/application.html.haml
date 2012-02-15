@@ -30,8 +30,8 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Top Rated Memes", "/path1"
-              %li= link_to 'New Meme', new_meme_path
-              %li= link_to "Upload a Meme", "/path2"
+              %li= link_to "Upload a Meme", new_meme_path
+              %li= link_to "All Memes", memes_path
             %ul.nav.pull-right
               -if current_user
                 %li=link_to current_user.name, '#'
