@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-end
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  validates_presence_of :name, :email
+
 
 def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
@@ -27,5 +28,6 @@ def self.new_with_session(params, session)
         user.email = data["email"]
       end
     end
-  end
+end
+  
 end

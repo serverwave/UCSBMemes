@@ -30,8 +30,13 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Top Rated Memes", "/path1"
+              %li= link_to 'New Meme', new_meme_path
               %li= link_to "Upload a Meme", "/path2"
-          / /.nav-collapse
+            %ul.nav.pull-right
+              -if current_user
+                %li=link_to current_user.name, '#'
+              -else
+                %li=link_to 'Sign In', new_user_session_path
     .container
       .content
         .row
@@ -43,14 +48,18 @@
               %h3 Sidebar
               %ul.nav.nav-list
                 %li.nav-header Sidebar
-                %li= link_to "Sign Up", new_user_registration_path
-                %li= link_to "Login", new_user_session_path
-                %li= link_to "Sign Out!!", destroy_user_session_path, :method => :delete
-                %li= link_to "Edit your Account", edit_user_registration_path
+                -if current_user
+                  %li= link_to "Sign Out!!", destroy_user_session_path, :method => :delete
+                  %li= link_to "Edit your Account", edit_user_registration_path
+                -else
+                  %li= link_to "Sign Up", new_user_registration_path
+                  %li= link_to "Login", new_user_session_path
+                  %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+
                
       %footer
         %center
-          %li=link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+
           
         %p © UCSB Memes, 2012
     / /container

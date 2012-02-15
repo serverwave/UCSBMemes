@@ -1,2 +1,6 @@
-%h1 Memes#show
-%p Find me in app/views/memes/show.html.haml
+%h1= @meme.tagline
+%h3= @meme.user.name
+=image_tag @meme.image
+%h4 Votes:
+= link_to @meme.votes.count, '#', :class => 'btn btn-danger'
+= link_to raw('<i class="icon-plus icon-white"></i>Vote'), vote_path(@meme), :class => 'btn btn-success'

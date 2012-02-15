@@ -6,6 +6,9 @@ Ucsbmemes::Application.routes.draw do
   
   root :to => 'pages#home'
 
+  resources :memes
+  match 'memes/vote/:id', :to => 'memes#vote', :as => :vote
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
   match "/login" => "devise/sessions#new"
   match "/signup" => "devise/registrations#new"

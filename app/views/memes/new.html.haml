@@ -1,2 +1,9 @@
 %h1 Memes#new
 %p Find me in app/views/memes/new.html.erb
+= form_for @meme do |f|
+  = label_tag :tagline
+  = f.text_field :tagline
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.file_field :image
+  %hr
+  = f.submit
