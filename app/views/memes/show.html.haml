@@ -3,4 +3,4 @@
 =image_tag @meme.image
 %h4 Votes:
 = link_to @meme.votes.count, '#', :class => 'btn btn-danger'
-= link_to raw('<i class="icon-plus icon-white"></i>Vote'), vote_path(@meme), :class => 'btn btn-success'
+= link_to icon('off', 'Refresh'), vote_path(@meme), :class => 'btn btn-success'
