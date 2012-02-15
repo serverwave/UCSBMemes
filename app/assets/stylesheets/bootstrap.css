@@ -49,6 +49,10 @@ sub, sup {
 sup {
   top: -0.5em;
 }
+li.thumbnail {
+	max-width: 200px;
+	max-height: 200px;
+}
 sub {
   bottom: -0.25em;
 }
