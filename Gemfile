@@ -7,7 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 gem 'devise'
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+# gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'haml'
 
 gem 'annotate', :git => 'http://github.com/ctran/annotate_models.git'

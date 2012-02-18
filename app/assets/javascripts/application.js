@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_tree .
 (function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
